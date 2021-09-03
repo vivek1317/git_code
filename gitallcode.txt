@@ -1,0 +1,521 @@
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ git config
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ git add
+fatal: not a git repository (or any of the parent directories): .git
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ git diff
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1,param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1,param2>...]
+                          synonym for --dirstat=files,param1,param2...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --compact-summary     generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --full-index          show full pre- and post-image object names on the "index" lines
+    --color[=<when>]      show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --abbrev[=<n>]        use <n> digits to display object names
+    --src-prefix <prefix>
+                          show the given source prefix instead of "a/"
+    --dst-prefix <prefix>
+                          show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --find-copies-harder  use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --rename-empty        use empty blobs as rename source
+    --follow              continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+Diff algorithm options
+    --minimal             produce the smallest possible diff
+    -w, --ignore-all-space
+                          ignore whitespace when comparing lines
+    -b, --ignore-space-change
+                          ignore changes in amount of whitespace
+    --ignore-space-at-eol
+                          ignore changes in whitespace at EOL
+    --ignore-cr-at-eol    ignore carrier-return at the end of line
+    --ignore-blank-lines  ignore changes whose lines are all blank
+    -I, --ignore-matching-lines <regex>
+                          ignore changes whose all lines match <regex>
+    --indent-heuristic    heuristic to shift diff hunk boundaries for easy reading
+    --patience            generate diff using the "patience diff" algorithm
+    --histogram           generate diff using the "histogram diff" algorithm
+    --diff-algorithm <algorithm>
+                          choose a diff algorithm
+    --anchored <text>     generate diff using the "anchored diff" algorithm
+    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+    --word-diff-regex <regex>
+                          use <regex> to decide what a word is
+    --color-words[=<regex>]
+                          equivalent to --word-diff=color --word-diff-regex=<regex>
+    --color-moved[=<mode>]
+                          moved lines of code are colored differently
+    --color-moved-ws <mode>
+                          how white spaces are ignored in --color-moved
+
+Other diff options
+    --relative[=<prefix>]
+                          when run from subdir, exclude changes outside and show relative paths
+    -a, --text            treat all files as text
+    -R                    swap two inputs, reverse the diff
+    --exit-code           exit with 1 if there were differences, 0 otherwise
+    --quiet               disable all output of the program
+    --ext-diff            allow an external diff helper to be executed
+    --textconv            run external text conversion filters when comparing binary files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules in the diff generation
+    --submodule[=<format>]
+                          specify how differences in submodules are shown
+    --ita-invisible-in-index
+                          hide 'git add -N' entries from the index
+    --ita-visible-in-index
+                          treat 'git add -N' entries as real in the index
+    -S <string>           look for differences that change the number of occurrences of the specified string
+    -G <regex>            look for differences that change the number of occurrences of the specified regex
+    --pickaxe-all         show all changes in the changeset with -S or -G
+    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+    -O <file>             control the order in which files appear in the output
+    --rotate-to <path>    show the change in the specified path first
+    --skip-to <path>      skip the output to the specified path
+    --find-object <object-id>
+                          look for differences that change the number of occurrences of the specified object
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          select files by diff type
+    --output <file>       Output to a specific file
+
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ git init
+Initialized empty Git repository in C:/Users/hp/Desktop/.git/
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ git commit
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'hp@DESKTOP-R78NM3J.(none)')
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        3rd Life Company/
+        5th Sem PIET/
+        6th Sem PIET/
+        AgreementLetter.jpg
+        BSEFCL_Praman_Patra.pdf
+        COVER LETTER VIVEK.docx
+        D.S.A/
+        DSA proj/
+        Dev-C++.lnk
+        Docker Desktop.lnk
+        DockerFile/
+        Google Chrome.lnk
+        HTML/
+        InitiateSingleEntryPaymentSummary05-01-2021.pdf
+        MATHS_ NK _ PART2.pdf
+        MATHS_NK _ PART1.pdf
+        Microsoft Teams.lnk
+        Python Program/
+        VIVEK KUMAR(PIET18CS152)/
+        VIVEK PPT.pptx
+        VIVEK Website - Copy/
+        Vivek Report/
+        Vivek's Resume (11).pdf
+        Vivek's Resume.pdf
+        Website/
+        c++/
+        college/
+        desktop.ini
+        dict.py
+        java/
+        projects C,C++/
+        udemy python/
+        vivkl.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ cls
+bash: cls: command not found
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ git config --global user.name "vivek_github"
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ git config --global user.email vivekrajkmrj@gmail.com
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=vivek_github
+user.email=vivekrajkmrj@gmail.com
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ pwd
+/c/Users/hp/Desktop
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ mkdir Git_hub
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/hp/Desktop/.git/
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop (master)
+$ cd Desktop
+bash: cd: Desktop: No such file or directory
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ bash desktop
+bash: desktop: No such file or directory
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ git desktop
+git: 'desktop' is not a git command. See 'git --help'.
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ git --help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone             Clone a repository into a new directory
+   init              Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add               Add file contents to the index
+   mv                Move or rename a file, a directory, or a symlink
+   restore           Restore working tree files
+   rm                Remove files from the working tree and from the index
+   sparse-checkout   Initialize and modify the sparse-checkout
+
+examine the history and state (see also: git help revisions)
+   bisect            Use binary search to find the commit that introduced a bug
+   diff              Show changes between commits, commit and working tree, etc
+   grep              Print lines matching a pattern
+   log               Show commit logs
+   show              Show various types of objects
+   status            Show the working tree status
+
+grow, mark and tweak your common history
+   branch            List, create, or delete branches
+   commit            Record changes to the repository
+   merge             Join two or more development histories together
+   rebase            Reapply commits on top of another base tip
+   reset             Reset current HEAD to the specified state
+   switch            Switch branches
+   tag               Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch             Download objects and refs from another repository
+   pull              Fetch from and integrate with another repository or a local branch
+   push              Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ bash:Desktop/Git_hub
+bash: bash:Desktop/Git_hub: No such file or directory
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ git ~ Git_hub
+git: 'C:/Users/hp' is not a git command. See 'git --help'.
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ git: c:/user/hp/Desktop/Git_hub
+bash: git:: command not found
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop
+$ cd Git_hub
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub
+$ pwd
+/c/Users/hp/Desktop/Git_hub
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub
+$ mkdir compari
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub
+$ cd compair
+bash: cd: compair: No such file or directory
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub
+$ cd compari
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari
+$ pwd
+/c/Users/hp/Desktop/Git_hub/compari
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari
+$ git init
+Initialized empty Git repository in C:/Users/hp/Desktop/Git_hub/compari/.git/
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ touch alpha.txt
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ notepad alpha.txt
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        alpha.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git add .
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   alpha.txt
+
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git commit - "beta gamma"
+error: pathspec '-' did not match any file(s) known to git
+error: pathspec 'beta gamma' did not match any file(s) known to git
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git commit -m "beta gamma"
+[master (root-commit) 3325736] beta gamma
+ 1 file changed, 1 insertion(+)
+ create mode 100644 alpha.txt
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git log
+commit 3325736948a3a5699a7726d7ad3e62e9a6d79580 (HEAD -> master)
+Author: vivek_github <vivekrajkmrj@gmail.com>
+Date:   Thu Sep 2 09:33:09 2021 +0530
+
+    beta gamma
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ touch beta.txt
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ notepad beta.txt
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        beta.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git add .
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git commit -m "alpha gamma"
+[master f568a8d] alpha gamma
+ 1 file changed, 1 insertion(+)
+ create mode 100644 beta.txt
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git log
+commit f568a8dc0bcbb3608a0c4337696c5e3cbbb70369 (HEAD -> master)
+Author: vivek_github <vivekrajkmrj@gmail.com>
+Date:   Thu Sep 2 09:34:54 2021 +0530
+
+    alpha gamma
+
+commit 3325736948a3a5699a7726d7ad3e62e9a6d79580
+Author: vivek_github <vivekrajkmrj@gmail.com>
+Date:   Thu Sep 2 09:33:09 2021 +0530
+
+    beta gamma
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ https://github.com/vivek1317/compari.git
+bash: https://github.com/vivek1317/compari.git: No such file or directory
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git remote -v
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git push-u origin master
+git: 'push-u' is not a git command. See 'git --help'.
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git push -u origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git remote add origin https://github.com/vivek1317/compari.git
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git remote -v
+origin  https://github.com/vivek1317/compari.git (fetch)
+origin  https://github.com/vivek1317/compari.git (push)
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$ git push -u origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 483 bytes | 241.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/vivek1317/compari.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+hp@DESKTOP-R78NM3J MINGW64 ~/Desktop/Git_hub/compari (master)
+$
